@@ -1,5 +1,9 @@
-FROM nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
-MAINTAINER nagadomi <nagadomi@nurs.or.jp>
+FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04
+MAINTAINER nagadomi <nagadomi@gmail.or.jp>
+
+# update nvidia public key
+RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
+RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
 
 # install deps
 RUN apt-get update && apt-get install -y git sudo
@@ -8,7 +12,7 @@ RUN apt-get update && apt-get install -y git sudo
 RUN git clone https://github.com/nagadomi/distro.git /root/torch --recursive && \
     cd /root/torch && \
      ./install-deps && \
-     TORCH_CUDA_ARCH_LIST="Kepler Maxwell Kepler+Tegra Kepler+Tesla Maxwell+Tegra Pascal Volta Turing" ./install.sh -b
+     TORCH_CUDA_ARCH_LIST="Kepler Maxwell Kepler+Tegra Kepler+Tesla Maxwell+Tegra Pascal Volta 7.5+PTX" ./install.sh -b
 
 # set env, from torch-activate
 ENV LUA_PATH='/root/.luarocks/share/lua/5.1/?.lua;/root/.luarocks/share/lua/5.1/?/init.lua;/root/torch/install/share/lua/5.1/?.lua;/root/torch/install/share/lua/5.1/?/init.lua;./?.lua;/root/torch/install/share/luajit-2.1.0-beta1/?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua'
