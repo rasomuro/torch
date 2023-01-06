@@ -1,5 +1,5 @@
 FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04
-MAINTAINER nagadomi <nagadomi@gmail.or.jp>
+MAINTAINER nagadomi <nagadomi@gmail.com>
 
 # update nvidia public key
 RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
