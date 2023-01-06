@@ -6,6 +6,8 @@
 
 For Ubuntu 20.04, use `ubuntu20.04-ppa` branch. See [#12](https://github.com/nagadomi/distro/issues/12).
 
+For modern devices, See [#18](https://github.com/nagadomi/distro/issues/18).
+
 ## Original README.md
 
 [![Build Status](https://travis-ci.org/torch/distro.svg?branch=master)](https://travis-ci.org/torch/distro)
