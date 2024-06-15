@@ -78,7 +78,7 @@
 	url = https://github.com/mpx/lua-cjson
 [submodule "extra/cutorch"]
 	path = extra/cutorch
-	url = git@github.com:rasomuro/cutorch.git
+	url = https://github.com/rasomuro/cutorch.git
 [submodule "extra/moses"]
 	path = extra/moses
 	url = https://github.com/Yonaba/Moses.git
